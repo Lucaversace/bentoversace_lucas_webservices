@@ -12,11 +12,11 @@ import { LocalStrategy } from './local.strategy';
     UsersModule,
     PassportModule.register({ defaultStrategy: 'local' }),
     JwtModule.register({
-      secret: 'votreSecretJWT', // Utilisez une variable d'environnement pour le secret
+      secret: 'SecretJWT', // Utilisez une variable d'environnement pour le secret
       signOptions: { expiresIn: '60s' }, // Définissez la durée de vie du token
     }),
   ],
-  providers: [AuthService, JwtStrategy, LocalStrategy],
+  providers: [AuthService, JwtStrategy,LocalStrategy],
   exports: [AuthService],
   controllers: [AuthController],
 })
