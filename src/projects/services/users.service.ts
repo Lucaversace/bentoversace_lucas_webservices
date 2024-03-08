@@ -20,6 +20,10 @@ export class UsersService {
     return this.usersModel.find().exec();
   }
 
+  async findOneByEmail(email: string) {
+    return await this.usersModel.findOne({ email }).exec();
+  }
+
   async findOne(id: string) {
     return this.usersModel.findById(id);
   }
